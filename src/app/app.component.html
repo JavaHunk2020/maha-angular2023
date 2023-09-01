@@ -4,9 +4,9 @@
 <div  class="container">
   <h2>{{message}}</h2>
   
-  <img  src="assets/students_schoool_footer2.png"  style="height: 180px;"/>
-     <img  src="assets/students_schoool_footer2.png"  style="height: 180px;"/>
-       <img  src="assets/students_schoool_footer2.png"  style="height: 180px;"/>
+  <img  src="assets/students_schoool_footer2.png"  style="height: 100px;"/>
+     <img  src="assets/students_schoool_footer2.png"  style="height: 100px;"/>
+       <img  src="assets/students_schoool_footer2.png"  style="height: 100px;"/>
       <hr/>
      
       <form>
@@ -30,21 +30,43 @@
       
         <div class="form-group" style="width: 60%">
          <label>Mobile</label>
-         <input type="number" name="mobile" class="form-control">
+         <input  #mobile type="number" name="mobile" class="form-control">
       </div>
       
          <div class="form-group" style="width: 60%">
          <label>Address</label>
-         <textarea rows="3" name="address" class="form-control"></textarea> 
+         <textarea #address rows="3" name="address" class="form-control"></textarea> 
          
       </div>
       
         <div class="form-group" style="width: 60%">
-       <button (click)="process(santosh, password,email);" type="button" class="btn btn-primary">Signup</button>
+       <button (click)="process(santosh, password,email, mobile, address);" type="button" class="btn btn-primary">Signup</button>
         &nbsp;&nbsp;
            <button type="reset" class="btn btn-danger">Clear</button>
            
       </div>
       </form>
-  
+      <hr/>
+      <table class="table table-bordered">
+         <thead>
+           <tr style="background-color: antiquewhite;">
+             <th>Username</th>
+             <th>Password</th>
+             <th>Email</th>
+             <th>Mobile</th>
+             <th>Address</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr  *ngFor="let asmita of signups">
+             <td>{{asmita.username}}</td>
+             <td>{{asmita.password}}</td>
+             <td>{{asmita.email | uppercase}}</td>
+             <td>{{asmita.mobile}}</td>
+             <td>{{asmita.address}}</td>
+           </tr>
+         </tbody>
+         <hr/>
+       </table>
+       
 </div>
